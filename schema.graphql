@@ -1,0 +1,58 @@
+type AdminPropertiesSet @entity(immutable: true) {
+  id: Bytes!
+  defaultCurrency: Bytes! # address
+  defaultLiveness: BigInt! # uint64
+  burnedBondPercentage: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AssertionDisputed @entity(immutable: true) {
+  id: Bytes!
+  assertionId: Bytes! # bytes32
+  caller: Bytes! # address
+  disputer: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AssertionMade @entity(immutable: true) {
+  id: Bytes!
+  assertionId: Bytes! # bytes32
+  domainId: Bytes! # bytes32
+  claim: Bytes! # bytes
+  asserter: Bytes! # address
+  callbackRecipient: Bytes! # address
+  escalationManager: Bytes! # address
+  caller: Bytes! # address
+  expirationTime: BigInt! # uint64
+  currency: Bytes! # address
+  bond: BigInt! # uint256
+  identifier: Bytes! # bytes32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AssertionSettled @entity(immutable: true) {
+  id: Bytes!
+  assertionId: Bytes! # bytes32
+  bondRecipient: Bytes! # address
+  disputed: Boolean! # bool
+  settlementResolution: Boolean! # bool
+  settleCaller: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

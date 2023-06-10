@@ -1,0 +1,36 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: OptimisticOracleV3
+    network: mainnet
+    source:
+      address: "0xfb55F43fB9F48F63f9269DB7Dde3BbBe1ebDC0dE"
+      abi: OptimisticOracleV3
+      startBlock: 16636058
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - AdminPropertiesSet
+        - AssertionDisputed
+        - AssertionMade
+        - AssertionSettled
+        - OwnershipTransferred
+      abis:
+        - name: OptimisticOracleV3
+          file: ./abis/OptimisticOracleV3.json
+      eventHandlers:
+        - event: AdminPropertiesSet(address,uint64,uint256)
+          handler: handleAdminPropertiesSet
+        - event: AssertionDisputed(indexed bytes32,indexed address,indexed address)
+          handler: handleAssertionDisputed
+        - event: AssertionMade(indexed bytes32,bytes32,bytes,indexed address,address,address,address,uint64,address,uint256,indexed bytes32)
+          handler: handleAssertionMade
+        - event: AssertionSettled(indexed bytes32,indexed address,bool,bool,address)
+          handler: handleAssertionSettled
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+      file: ./src/optimistic-oracle-v-3.ts
