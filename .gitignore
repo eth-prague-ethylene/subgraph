@@ -1,0 +1,9 @@
+bower_components/
+node_modules/
+/.idea
+/build
+/dist
+npm-debug.log
+/spec/temp/
+/coverage
+package-lock.json

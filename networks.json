@@ -1,8 +1,8 @@
 {
-  "mainnet": {
+  "mumbai": {
     "OptimisticOracleV3": {
-      "address": "0xfb55F43fB9F48F63f9269DB7Dde3BbBe1ebDC0dE",
-      "startBlock": 16636058
+      "address": "0xAfAE2dD69F115ec26DFbE2fa5a8642D94D7Cd37E",
+      "startBlock": 36674816
     }
   }
 }

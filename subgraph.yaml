@@ -4,9 +4,9 @@ schema:
 dataSources:
   - kind: ethereum
     name: OptimisticOracleV3
-    network: mainnet
+    network: mumbai
     source:
-      address: "0xfb55F43fB9F48F63f9269DB7Dde3BbBe1ebDC0dE"
+      address: "0xAfAE2dD69F115ec26DFbE2fa5a8642D94D7Cd37E"
       abi: OptimisticOracleV3
       startBlock: 16636058
     mapping:
